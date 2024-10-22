@@ -27,7 +27,9 @@ jobs:
         run: pnpm lint
       - name: Run Build
         run: pnpm build
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
       - name: Install Playwright
-        run: pnpm dlx playwright@1.47.0 install --with-deps
+        run: bunx playwright@1.47.0 install --with-deps
       - name: Run Playwright
         run: pnpm test
