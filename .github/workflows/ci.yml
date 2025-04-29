@@ -9,6 +9,8 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.52.0-noble
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Install pnpm
@@ -23,7 +25,5 @@ jobs:
         run: pnpm lint
       - name: Run Build
         run: pnpm build
-      - name: Install Playwright
-        run: pnpm dlx playwright@1.52.0 install --with-deps
       - name: Run Vitest and Playwright
         run: pnpm test
