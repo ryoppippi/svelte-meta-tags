@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 5.0.1
+
+### Patch Changes
+
+- ebfde2b: refactor: clean up conditionals and each blocks in `MetaTags.svelte`
+
 ## 5.0.0
 
 ### Major Changes
